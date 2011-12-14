@@ -1,0 +1,22 @@
+ = Introduction =
+Publish the data of the house to internet.
+
+ = Function =
+ * Publish the data of the house to internet.
+
+ = Hardware Required =
+ * Arduino Ethernet Shield
+ * Shield-compatible Arduino board
+ * Network cable to connect the sheild and the router
+ * USB cable to connect Arduino and PC (optional, just for debug)
+
+ = Software Required =
+ * Arduino 1.o or newer
+ * Pachube account
+ * Pachube feed
+
+ = Library Required =
+ * WString
+ * Ethernet
+ * SPI
+ * ERxPachube
