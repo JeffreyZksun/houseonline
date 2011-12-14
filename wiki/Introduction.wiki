@@ -2,7 +2,7 @@
 Publish the data of the house to internet.
 
  = Function =
- * Publish the data of the house to internet.
+ * Publish the data of the house to Pachube server.
 
  = Hardware Required =
  * Arduino Ethernet Shield
