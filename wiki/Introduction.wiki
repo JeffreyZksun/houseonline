@@ -1,22 +1,27 @@
+#labels Featured
  = Introduction =
 Publish the data of the house to internet.
 
  = Function =
  * Publish the data of the house to Pachube server.
 
- = Hardware Required =
- * Arduino Ethernet Shield
- * Shield-compatible Arduino board
- * Network cable to connect the sheild and the router
+ = Hardwares =
+ * [ http://www.dfrobot.com/index.php?route=product/product&filter_name=mega%201280&filter_category_id=38&product_id=358 Arduino Mega board]
+[http://www.dfrobot.com/image/cache/data/DFR0108/01-500x500.jpg]
+ * [http://www.dfrobot.com/index.php?route=product/product&filter_name=Ethernet%205100&filter_category_id=39&product_id=455 Ethernet Shield]
+[http://www.dfrobot.com/image/cache/data/DFR0125/DFR0125-500x500.jpg]
+ * [http://www.dfrobot.com/index.php?route=product/product&keyword=dfr0067&category_id=0&description=1&model=1&product_id=174 Sensor DHT11]
+[http://www.dfrobot.com/image/cache/data/DFR0067/DFR0067-500x500.jpg]
+ * Network cable to connect the sheild and router
  * USB cable to connect Arduino and PC (optional, just for debug)
 
- = Software Required =
- * Arduino 1.o or newer
- * Pachube account
- * Pachube feed
+ = Softwares=
+ * [http://arduino.cc/en/Main/Software Arduino 1.o]
+ * [https://pachube.com/feeds/11298 Pachube account and feed 11298]
 
- = Library Required =
+ = Libraries=
  * WString
  * Ethernet
  * SPI
- * ERxPachube
+ * [http://code.google.com/p/pachubelibrary ERxPachube]
+ * Timer
