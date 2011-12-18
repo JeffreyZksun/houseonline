@@ -2,6 +2,14 @@
  = Introduction =
 Publish the data of temperature and humidity of the house to pachube server.
 
+[https://api.pachube.com/v2/feeds/42131/datastreams/0.png?width=702&height=250&colour=F15A24&duration=24hours&detailed_grid=true&show_axis_labels=true&timezone=]
+
+Figure 1 - Temperature 
+
+[https://api.pachube.com/v2/feeds/42131/datastreams/1.png?width=702&height=250&colour=F15A24&duration=24hours&detailed_grid=true&show_axis_labels=true&timezone=]
+
+Figure 2 - Humidity 
+
  = Hardwares =
  * [http://www.dfrobot.com/index.php?route=product/product&filter_name=mega%201280&filter_category_id=38&product_id=358 Arduino Mega board]
 [http://www.dfrobot.com/image/cache/data/DFR0108/01-500x500.jpg]
