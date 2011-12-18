@@ -9,6 +9,8 @@ Publish the data of temperature and humidity of the house to pachube server.
 [http://www.dfrobot.com/image/cache/data/DFR0125/DFR0125-500x500.jpg]
  * [http://www.dfrobot.com/index.php?route=product/product&keyword=dfr0067&category_id=0&description=1&model=1&product_id=174 Sensor DHT11]
 [http://www.dfrobot.com/image/cache/data/DFR0067/DFR0067-500x500.jpg]
+ * [http://item.taobao.com/item.htm?id=14616712897 Sensor AM2311]
+[http://www.aosong.com/asp_bin/Products/AM2311.jpg]
  * Network cable to connect the sheild and router
  * USB cable to connect Arduino and PC (optional, just for debug)
 
