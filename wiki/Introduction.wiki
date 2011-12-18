@@ -23,6 +23,7 @@ Publish the data of temperature and humidity of the house to pachube server.
  * Ethernet
  * SPI
  * [http://code.google.com/p/pachubelibrary ERxPachube]
+ * [http://code.google.com/p/am2311library/ ERxAM2311]
  * [http://www.arduino.cc/playground/Code/Time Timer]
  * [http://arduino.cc/playground/Main/DHT11Lib A DHT11 Class for Arduino]
 
