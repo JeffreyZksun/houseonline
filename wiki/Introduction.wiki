@@ -1,9 +1,6 @@
 #labels Featured
  = Introduction =
-Publish the data of the house to internet.
-
- = Function =
- * Publish the data of the house to Pachube server.
+Publish the data of temperature and humidity of the house to pachube server.
 
  = Hardwares =
  * [http://www.dfrobot.com/index.php?route=product/product&filter_name=mega%201280&filter_category_id=38&product_id=358 Arduino Mega board]
@@ -24,4 +21,15 @@ Publish the data of the house to internet.
  * Ethernet
  * SPI
  * [http://code.google.com/p/pachubelibrary ERxPachube]
- * Timer
+ * [http://www.arduino.cc/playground/Code/Time Timer]
+ * [http://arduino.cc/playground/Main/DHT11Lib A DHT11 Class for Arduino]
+
+ = SKech =
+{{{
+    // source code 
+}}}
+
+
+ = References = 
+ * [http://arduino.cc/playground/Main/DHTLib One class for both DHT11 and DHT22]
+ * [http://www.dfrobot.com/wiki/index.php?title=DHT11_Temperature_and_Humidity_Sensor_%28SKU:_DFR0067%29 DHT11 Temperature and Humidity Sensor (SKU: DFR0067)]
