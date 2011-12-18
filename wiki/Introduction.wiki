@@ -6,7 +6,7 @@ Publish the data of the house to internet.
  * Publish the data of the house to Pachube server.
 
  = Hardwares =
- * [ http://www.dfrobot.com/index.php?route=product/product&filter_name=mega%201280&filter_category_id=38&product_id=358 Arduino Mega board]
+ * [http://www.dfrobot.com/index.php?route=product/product&filter_name=mega%201280&filter_category_id=38&product_id=358 Arduino Mega board]
 [http://www.dfrobot.com/image/cache/data/DFR0108/01-500x500.jpg]
  * [http://www.dfrobot.com/index.php?route=product/product&filter_name=Ethernet%205100&filter_category_id=39&product_id=455 Ethernet Shield]
 [http://www.dfrobot.com/image/cache/data/DFR0125/DFR0125-500x500.jpg]
