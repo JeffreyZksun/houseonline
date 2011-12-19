@@ -2,11 +2,11 @@
  = Introduction =
 Publish the data of temperature and humidity of the house to pachube server.
 
-[https://api.pachube.com/v2/feeds/42131/datastreams/0.png?width=702&height=250&colour=F15A24&duration=24hours&detailed_grid=true&show_axis_labels=true&timezone=]
+[https://api.pachube.com/v2/feeds/42131/datastreams/0.png?width=702&height=250&colour=F15A24&duration=24hours&detailed_grid=true&show_axis_labels=true&timezone=Beijing]
 
 Figure 1 - Temperature 
 
-[https://api.pachube.com/v2/feeds/42131/datastreams/1.png?width=702&height=250&colour=F15A24&duration=24hours&detailed_grid=true&show_axis_labels=true&timezone=]
+[https://api.pachube.com/v2/feeds/42131/datastreams/1.png?width=702&height=250&colour=F15A24&duration=24hours&detailed_grid=true&show_axis_labels=true&timezone=Beijing]
 
 Figure 2 - Humidity 
 
@@ -24,6 +24,7 @@ Figure 2 - Humidity
 
  = Softwares=
  * [http://arduino.cc/en/Main/Software Arduino 1.o]
+[http://arduino.cc/blog/wp-content/uploads/2011/11/Arduino-1.0-screenshot.png]
  * [https://pachube.com/feeds/42131 Pachube account and feed 42131]
 
  = Libraries=
@@ -35,7 +36,7 @@ Figure 2 - Humidity
  * [http://www.arduino.cc/playground/Code/Time Timer]
  * [http://arduino.cc/playground/Main/DHT11Lib A DHT11 Class for Arduino]
 
- = SKech =
+ = Skech =
 {{{
     // source code 
 }}}
