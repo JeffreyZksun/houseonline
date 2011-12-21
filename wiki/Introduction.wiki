@@ -52,8 +52,8 @@ Figure 2 - Humidity
 byte mac[] = { 0xCC, 0xAC, 0xBE, 0xEF, 0xFE, 0x91 }; // make sure this is unique on your network
 byte ip[] = { 192, 168, 1, 177   };                  // no DHCP so we set our own IP address
 
-#define PACHUBE_API_KEY				"MsKBIqAa8VoRrR2R2jjJCO6VolYGqzKtpKeQ2FASwfA" // fill in your API key PACHUBE_API_KEY
-#define PACHUBE_FEED_ID				42131
+#define PACHUBE_API_KEY				"YourKey" // fill in your API key PACHUBE_API_KEY
+#define PACHUBE_FEED_ID				42131      // Replace it with you ID.
 
 // Rate-limitation for free account: 5 api requests / minute, Import 500 datapoints / day
 // send 1 request at least 1 minutes
