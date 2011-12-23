@@ -4,7 +4,7 @@
 [http://item.taobao.com/item.htm?id=9959773068]
 
  * Ethernet Shield (¥138)
-［http://item.taobao.com/item.htm?id=10946246576］
+[http://item.taobao.com/item.htm?id=10946246576]
 
  * Sensor DHT11 (¥20)
 [http://item.taobao.com/item.htm?id=12998167840]
@@ -13,4 +13,3 @@
 [http://item.taobao.com/item.htm?id=12659015955]
 
 总计：238.
-
