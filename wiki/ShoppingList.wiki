@@ -3,16 +3,14 @@
  * Arduino Mega board (¥99)
 [http://item.taobao.com/item.htm?id=9959773068]
 
- ＊ Ethernet Shield (¥138)
+ * Ethernet Shield (¥138)
 ［http://item.taobao.com/item.htm?id=10946246576］
 
-＊ Sensor DHT11 (¥20)
+ * Sensor DHT11 (¥20)
 [http://item.taobao.com/item.htm?id=12998167840]
 
-＊ Sensor AM2311 (¥21)
+ * Sensor AM2311 (¥21)
 [http://item.taobao.com/item.htm?id=12659015955]
 
 总计：238.
-
-
 
