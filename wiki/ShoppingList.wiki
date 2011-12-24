@@ -1,4 +1,5 @@
 #summary The shopping list of the required hardwares.
+#labels Featured
 
  * Arduino Mega board (¥99)
 [http://item.taobao.com/item.htm?id=9959773068]
@@ -12,4 +13,4 @@
  * Sensor AM2311 (¥21)
 [http://item.taobao.com/item.htm?id=12659015955]
 
-总计：278.
+TOTAL：¥278.
