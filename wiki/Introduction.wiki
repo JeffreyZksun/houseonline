@@ -38,6 +38,14 @@ Download the libraries below and add them to the folder <Arduino-Installation-Pa
  * [http://www.arduino.cc/playground/Code/Time Timer]
  * [http://arduino.cc/playground/Main/DHT11Lib DHT11]
 
+ = Circuit =
+ * Stack Ethernet shield over the Arduino Board
+ * Ethernet shield attached to pins 10, 11, 12, 13
+ * Connect the data pin of DHT11 to Arduino pin 2 (DHT11PIN)
+ * Connect the SDA and SCL pins of AM2311 to SDA and SCL pins of Arduino
+ * Connect the VCC and GND pins of DHT11 and AM2311 to +5V and GND pins of Arduino
+ * Connect the Ethernet shield to the router
+
  = Skech =
 Use the actual PAI key and feed id to replace the space holders of the macros PACHUBE_API_KEY and PACHUBE_FEED_ID.
  
@@ -145,6 +153,9 @@ void PrintDataStream(const ERxPachube& pachube)
 	}
 }
 }}}
+
+ = Well done =
+Build the sketch and upload it to Arduino. Then the system should run.
 
 
  = References = 
