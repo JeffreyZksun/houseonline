@@ -12,6 +12,7 @@ Figure 1 - Temperature
 Figure 2 - Humidity 
 
  = Hardwares =
+The hardwares below are required by this project. If you want to create this kind of system, prepare these hardwares ahead.
  * [http://www.dfrobot.com/index.php?route=product/product&filter_name=mega%201280&filter_category_id=38&product_id=358 Arduino Mega board]
 [http://www.dfrobot.com/image/cache/data/DFR0108/01-500x500.jpg]
  * [http://www.dfrobot.com/index.php?route=product/product&filter_name=Ethernet%205100&filter_category_id=39&product_id=455 Ethernet Shield]
@@ -24,21 +25,22 @@ Figure 2 - Humidity
  * USB cable to connect Arduino and PC (optional, just for debug)
 
  = Softwares=
+The code is compiled by Arduino 1.0 and the sensor data is uploaded to Pachube,com. Download and install Arduino 1.0 and register an account on Pachube.com and create a feed the same as 42131.
  * [http://arduino.cc/en/Main/Software Arduino 1.o]
 [http://arduino.cc/blog/wp-content/uploads/2011/11/Arduino-1.0-screenshot.png]
  * [https://pachube.com/feeds/42131 Pachube account and feed 42131]
-    Create 5 data streams with the ids 0, 1, 2, 3, 4.
+    Create 5 data streams with the ids 0, 1, 2, 3, 4, which is the same as 42131.
 
  = Libraries=
- * WString
- * Ethernet
- * SPI
+Download the libraries below and add them to the folder <Arduino-Installation-Path>/libraries/.
  * [http://code.google.com/p/pachubelibrary ERxPachube]
  * [http://code.google.com/p/am2311library/ ERxAM2311]
  * [http://www.arduino.cc/playground/Code/Time Timer]
  * [http://arduino.cc/playground/Main/DHT11Lib DHT11]
 
  = Skech =
+Use the actual PAI key and feed id to replace the space holders of the macros PACHUBE_API_KEY and PACHUBE_FEED_ID.
+ 
 {{{
 #include <Arduino.h>
 #include <HardwareSerial.h>
@@ -54,7 +56,7 @@ Figure 2 - Humidity
 byte mac[] = { 0xCC, 0xAC, 0xBE, 0xEF, 0xFE, 0x91 }; // make sure this is unique on your network
 byte ip[] = { 192, 168, 1, 177   };                  // no DHCP so we set our own IP address
 
-#define PACHUBE_API_KEY				"YourKey" // fill in your API key PACHUBE_API_KEY
+#define PACHUBE_API_KEY				"YourKey" // Fill in your API key PACHUBE_API_KEY
 #define PACHUBE_FEED_ID				42131      // Replace it with you ID.
 
 // Rate-limitation for free account: 5 api requests / minute, Import 500 datapoints / day
