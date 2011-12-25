@@ -32,7 +32,7 @@ The code is compiled by Arduino 1.0 and the sensor data is uploaded to Pachube,c
     Create 5 data streams with the ids 0, 1, 2, 3, 4, which is the same as 42131.
 
  = Libraries=
-Download the libraries below and add them to the folder <Arduino-Installation-Path>/libraries/.
+Download the libraries below and add them to the folder {{{<Arduino-Installation-Path>/libraries/}}}.
  * [http://code.google.com/p/pachubelibrary ERxPachube]
  * [http://code.google.com/p/am2311library/ ERxAM2311]
  * [http://www.arduino.cc/playground/Code/Time Timer]
