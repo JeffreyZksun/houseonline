@@ -13,16 +13,14 @@ Figure 2 - Humidity
 
  = Hardwares =
 The hardwares below are required by this project. If you want to create this kind of system, prepare these hardwares ahead.
- * [http://www.dfrobot.com/index.php?route=product/product&filter_name=mega%201280&filter_category_id=38&product_id=358 Arduino Mega board]
-[http://www.dfrobot.com/image/cache/data/DFR0108/01-500x500.jpg]
- * [http://www.dfrobot.com/index.php?route=product/product&filter_name=Ethernet%205100&filter_category_id=39&product_id=455 Ethernet Shield]
-[http://www.dfrobot.com/image/cache/data/DFR0125/DFR0125-500x500.jpg]
- * [http://www.dfrobot.com/index.php?route=product/product&keyword=dfr0067&category_id=0&description=1&model=1&product_id=174 Sensor DHT11]
-[http://www.dfrobot.com/image/cache/data/DFR0067/DFR0067-500x500.jpg]
- * [http://item.taobao.com/item.htm?id=14616712897 Sensor AM2311]
-[http://www.aosong.com/asp_bin/Products/AM2311.jpg]
+ * Arduino Mega board
+ * Ethernet Shield
+ * Sensor DHT11
+ * Sensor AM2311
  * Network cable to connect the sheild and router
  * USB cable to connect Arduino and PC (optional, just for debug)
+
+See more details at the [Shoppinglist Shopping List].
 
  = Softwares=
 The code is compiled by Arduino 1.0 and the sensor data is uploaded to Pachube,com. Download and install Arduino 1.0 and register an account on Pachube.com and create a feed the same as 42131.
@@ -37,14 +35,6 @@ Download the libraries below and add them to the folder {{{<Arduino-Installation
  * [http://code.google.com/p/am2311library/ ERxAM2311]
  * [http://www.arduino.cc/playground/Code/Time Timer]
  * [http://arduino.cc/playground/Main/DHT11Lib DHT11]
-
- = Circuit =
- * Stack Ethernet shield over the Arduino Board
- * Ethernet shield attached to pins 10, 11, 12, 13
- * Connect the data pin of DHT11 to Arduino pin 2 (DHT11PIN)
- * Connect the SDA and SCL pins of AM2311 to SDA and SCL pins of Arduino
- * Connect the VCC and GND pins of DHT11 and AM2311 to +5V and GND pins of Arduino
- * Connect the Ethernet shield to the router
 
  = Skech =
 Use the actual PAI key and feed id to replace the space holders of the macros PACHUBE_API_KEY and PACHUBE_FEED_ID.
@@ -154,10 +144,8 @@ void PrintDataStream(const ERxPachube& pachube)
 }
 }}}
 
- = Well done =
-Build the sketch and upload it to Arduino. Then the system should run.
-
 
  = References = 
  * [http://arduino.cc/playground/Main/DHTLib One class for both DHT11 and DHT22]
  * [http://www.dfrobot.com/wiki/index.php?title=DHT11_Temperature_and_Humidity_Sensor_%28SKU:_DFR0067%29 DHT11 Temperature and Humidity Sensor (SKU: DFR0067)]
+ * [https://pachube.com/feeds/42131 Hose online]
