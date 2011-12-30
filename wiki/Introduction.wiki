@@ -20,7 +20,7 @@ The hardwares below are required by this project. If you want to create this kin
  * Network cable to connect the sheild and router
  * USB cable to connect Arduino and PC (optional, just for debug)
 
-See more details at the [Shoppinglist Shopping List].
+See more details at the [ShoppingList Shopping List].
 
  = Softwares=
 The code is compiled by Arduino 1.0 and the sensor data is uploaded to Pachube,com. Download and install Arduino 1.0 and register an account on Pachube.com and create a feed the same as 42131.
