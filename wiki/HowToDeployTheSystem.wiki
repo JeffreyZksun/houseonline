@@ -7,7 +7,7 @@
     * Wiring the hardwares.
         * Stack Ethernet shield over the Arduino Board (Ethernet shield attached to pins 10, 11, 12, 13)
         * Connect the data pin of DHT11 to Arduino pin 2 (DHT11PIN)
-        * Connect the SDA and SCL pins of AM2311 to SDA and SCL pins of Arduino
+        * Connect the SDA and SCL pins of AM2311 to 20 (SDA) and 21 (SCL) pins of Arduino
         * Connect the VCC and GND pins of DHT11 and AM2311 to +5V and GND pins of Arduino
         * Connect the Ethernet shield to the router
         * Make sure the router is connected to the ethernet.
@@ -34,8 +34,6 @@
    * Place the Arduino to the palace you want to monitor. 
 
 *That's All!*
-
-
 
 
 
