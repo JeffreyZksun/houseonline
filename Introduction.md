@@ -1,0 +1,160 @@
+> # Introduction #
+
+This project uses the Arduino and pachube.com to implement publishing
+temperature and humidity of the house to Internet. The data can be accessed everywhere with the IE. Pachube.com provide friendly diagrams to show the data. The figures below show the data of last 24 hours. The realtime data can be found [here](https://pachube.com/feeds/42131).
+
+![http://farm8.staticflickr.com/7195/6843458790_47e43cf2bd_b.jpg](http://farm8.staticflickr.com/7195/6843458790_47e43cf2bd_b.jpg)
+
+Figure 1 - Temperature
+
+![http://farm8.staticflickr.com/7057/6843459160_bc2b3c21a3_b.jpg](http://farm8.staticflickr.com/7057/6843459160_bc2b3c21a3_b.jpg)
+
+Figure 2 - Humidity
+
+[Arduino](http://www.arduino.cc) is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It's intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.
+
+![http://arduino.cc/en/uploads/Main/arduino_uno_test.jpg](http://arduino.cc/en/uploads/Main/arduino_uno_test.jpg)
+
+[Pachube](http://www.pachube.com) ("patch-bay") connects people to devices, applications, and the Internet of Things. As a web-based service built to manage the world's real-time data, Pachube gives people the power to share, collaborate, and make use of information generated from the world around them.
+
+https://pachube.com/images/howitworks.png?1325080502
+
+> # Hardwares #
+The hardwares below are required by this project. If you want to create this kind of system, prepare these hardwares ahead.
+  * Arduino Mega board
+  * Ethernet Shield
+  * Sensor DHT11
+  * Sensor AM2311
+  * Network cable to connect the sheild and router
+  * USB cable to connect Arduino and PC (optional, just for debug)
+
+See more details at the [Shopping List](ShoppingList.md).
+
+> # Softwares #
+The code is compiled by Arduino 1.0 and the sensor data is uploaded to Pachube,com. Download and install Arduino 1.0 and register an account on Pachube.com and create a feed the same as 42131.
+  * [Arduino 1.o](http://arduino.cc/en/Main/Software)
+![http://arduino.cc/blog/wp-content/uploads/2011/11/Arduino-1.0-screenshot.png](http://arduino.cc/blog/wp-content/uploads/2011/11/Arduino-1.0-screenshot.png)
+  * [Pachube account and feed 42131](https://pachube.com/feeds/42131)
+> > Create 5 data streams with the ids 0, 1, 2, 3, 4, which is the same as 42131.
+
+
+> # Libraries #
+Download the libraries below and add them to the folder `<Arduino-Installation-Path>/libraries/`.
+  * [ERxPachube](http://code.google.com/p/pachubelibrary)
+  * [ERxAM2311](http://code.google.com/p/am2311library/)
+  * [Timer](http://www.arduino.cc/playground/Code/Time)
+  * [DHT11](http://arduino.cc/playground/Main/DHT11Lib)
+
+> # Skech #
+Use the actual PAI key and feed id to replace the space holders of the macros PACHUBE\_API\_KEY and PACHUBE\_FEED\_ID.
+
+```
+#include <Arduino.h>
+#include <HardwareSerial.h>
+#include <ERxPachube.h>
+#include <Ethernet.h>
+#include <SPI.h>
+#include <Time.h>
+#include <ERxAM2311.h>
+#include <Wire.h>
+#include <DHT11.h>
+
+
+byte mac[] = { 0xCC, 0xAC, 0xBE, 0xEF, 0xFE, 0x91 }; // make sure this is unique on your network
+byte ip[] = { 192, 168, 1, 177   };                  // no DHCP so we set our own IP address
+
+#define PACHUBE_API_KEY				"YourKey" // Fill in your API key PACHUBE_API_KEY
+#define PACHUBE_FEED_ID				42131      // Replace it with you ID.
+
+// Rate-limitation for free account: 5 api requests / minute, Import 500 datapoints / day
+// send 1 request at least 1 minutes
+#define UPDATE_INTERVAL            1 // minutes
+unsigned long last_connect = 0;
+
+unsigned int gTotalQuantity = 0;
+unsigned int gSuccessQuantity = 0;
+
+#define BUFFER_SIZE 128
+char pGlogalDataBuffer[BUFFER_SIZE]; // It is used to get the data from program memory.
+
+
+ERxPachubeDataOut dataout(PACHUBE_API_KEY, PACHUBE_FEED_ID);
+
+ERxAM2311 amSensor;
+dht11 dhtSensor;
+
+#define DHT11PIN 2
+
+void PrintDataStream(const ERxPachube& pachube);
+
+void setup() {
+	Serial.begin(9600);
+	Ethernet.begin(mac, ip);
+
+	dataout.addData(0); // Temp-1
+	dataout.addData(1); // Hum-1
+	dataout.addData(2); // Temp-2
+	dataout.addData(3); // Hum-2
+	dataout.addData(4); // Success rate
+
+	Serial.println("Starting...");
+
+}
+
+void loop() {
+
+	if (minute() < last_connect) 
+		last_connect = minute();
+
+	if ((minute() - last_connect) >= UPDATE_INTERVAL)
+	{
+		last_connect = minute();
+
+		gTotalQuantity++;
+
+		amSensor.read();
+		dhtSensor.read(DHT11PIN);
+
+		dataout.updateData(0, amSensor.temperature);
+		dataout.updateData(1, amSensor.humidity);
+		dataout.updateData(2, dhtSensor.temperature);
+		dataout.updateData(3, dhtSensor.humidity);
+
+		sprintf(pGlogalDataBuffer,"%d/%d", gSuccessQuantity, gTotalQuantity);
+		dataout.updateData(4, pGlogalDataBuffer);
+
+		int status = dataout.updatePachube();
+
+		if(200 == status)
+			gSuccessQuantity++;
+
+		Serial.print("sync status code <OK == 200> => ");
+		Serial.println(status);
+
+		PrintDataStream(dataout);
+	}
+}
+
+void PrintDataStream(const ERxPachube& pachube)
+{
+	Serial.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
+	unsigned int count = pachube.countDatastreams();
+	Serial.print("data count=> ");
+	Serial.println(count);
+
+	Serial.println("<id>,<value>");
+	for(unsigned int i = 0; i < count; i++)
+	{
+		Serial.print(pachube.getIdByIndex(i));
+		Serial.print(",");
+		Serial.print(pachube.getValueByIndex(i));
+		Serial.println();
+	}
+}
+```
+
+
+> # References #
+  * [One class for both DHT11 and DHT22](http://arduino.cc/playground/Main/DHTLib)
+  * [DHT11 Temperature and Humidity Sensor (SKU: DFR0067)](http://www.dfrobot.com/wiki/index.php?title=DHT11_Temperature_and_Humidity_Sensor_%28SKU:_DFR0067%29)
+  * [Hose online](https://pachube.com/feeds/42131)

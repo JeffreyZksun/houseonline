@@ -1,0 +1,39 @@
+# Steps #
+
+  * Hardware preparation
+    * Buy the hardwares listed in the [Shopping list](ShoppingList.md)
+    * Wiring the hardwares.
+      * Stack Ethernet shield over the Arduino Board (Ethernet shield attached to pins 10, 11, 12, 13)
+      * Connect the data pin of DHT11 to Arduino pin 2 (DHT11PIN)
+      * Connect the SDA and SCL pins of AM2311 to 20 (SDA) and 21 (SCL) pins of Arduino
+      * Connect the VCC and GND pins of DHT11 and AM2311 to +5V and GND pins of Arduino
+      * Connect the Ethernet shield to the router
+      * Make sure the router is connected to the ethernet.
+
+  * Configure Internet-of-Thing server
+    * Register an account on www.pacube.com
+    * Create 5 data streams with the ids 0, 1, 2, 3, 4, which is the same as 42131.
+
+  * Software preparation
+    * Install [Arduino 1.o](http://arduino.cc/en/Main/Software)
+    * Download the required libraries here (http://code.google.com/p/houseonline/source/browse/trunk/src/Libs/) and copy them to the folder `<AruinoInstallationPath>/libraries/`
+    * Download the project sketch code http://code.google.com/p/houseonline/source/browse/trunk/src/Project/houseonline.ino
+
+  * Modify the sketch
+    * Open the sketch in the Arduino IDE.
+    * Use the actual data to replace the space holders for string macro  PACHUBE\_API\_KEY and numeric macro PACHUBE\_FEED\_ID.
+    * Build the sketch
+
+  * Upload
+    * Connect the Arduino and PC with the USB cable.
+    * Upload the sketch to Arduino.
+
+  * Hardware deployment
+    * Place the Arduino to the palace you want to monitor.
+
+**That's All!**
+
+
+
+
+

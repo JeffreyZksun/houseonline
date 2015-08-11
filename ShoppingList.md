@@ -1,0 +1,21 @@
+  * Arduino Mega board (¥99)
+http://item.taobao.com/item.htm?id=9959773068
+
+![http://www.dfrobot.com/image/cache/data/DFR0108/01-500x500.jpg](http://www.dfrobot.com/image/cache/data/DFR0108/01-500x500.jpg)
+
+  * Ethernet Shield (¥138)
+http://item.taobao.com/item.htm?id=10946246576
+
+![http://www.dfrobot.com/image/cache/data/DFR0125/DFR0125-500x500.jpg](http://www.dfrobot.com/image/cache/data/DFR0125/DFR0125-500x500.jpg)
+
+  * Sensor DHT11 (¥20)
+http://item.taobao.com/item.htm?id=12998167840
+
+![http://www.dfrobot.com/image/cache/data/DFR0067/DFR0067-500x500.jpg](http://www.dfrobot.com/image/cache/data/DFR0067/DFR0067-500x500.jpg)
+
+  * Sensor AM2311 (¥21)
+http://item.taobao.com/item.htm?id=12659015955
+
+![http://www.aosong.com/asp_bin/Products/AM2311.jpg](http://www.aosong.com/asp_bin/Products/AM2311.jpg)
+
+TOTAL：¥278.
